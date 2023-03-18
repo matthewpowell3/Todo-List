@@ -1,23 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Home</title>
+    <title>Real Javascript Learning</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
     <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
   </head>
   <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
+    <input type="text" id="todoValue" placeholder="Add a todo" />
+    <input type="date" id="datepicker" />
+    <button onclick="addTodos()" id="addButton">Click me</button>
+    <button onclick="clearTodos()" id="resetButton">Reset</button>
+    <div id="todosContainer"></div>
+    <script>
+      document.title = 'Learning New Things In Javascript';
+
+      // let button = document.createElement("button");
+      // button.innerText = "Click Me";
+      // document.body.appendChild(button);
+
+      const todos = ['Get groceries', 'Do my homework', 'Make dinner'];
+
+      renderer();
+
+      // function are reusedable
+
+      function addTodos() {
+        const todoid = document.getElementById('todoValue');
+        const datepicker = document.getElementById('datePicker');
+        const todolistValue = todoid.value;
+        todos.push(todoid.value);
+
+        renderer();
+
+        // don't use a function which reuses the code
+
+        // let element = document.createElement("div");
+        // element.innerText = todolistValue;
+        // document.body.appendChild(element);
+      }
+
+      function clearTodos() {
+        const todoValue = document.getElementById('todoValue');
+        todoValue.value = '';
+      }
+
+      function renderer() {
+        // reset code
+        document.getElementById('todosContainer').innerText = '';
+
+        todos.forEach(function (todoValue) {
+          let element = document.createElement('div');
+          element.innerText = todoValue;
+          let todosContainer = document.getElementById('todosContainer');
+          todosContainer.appendChild(element);
+          /* have to change it ferom body to
+          the div container cause if you reset it will rest the button and everthing */
+          // document.body.appendChild(element);
+        });
+      }
+
+      // Strings have methods to
+
+      console.log('hello'.toUpperCase());
+
+      // todos.pop();
+
+      // NOTES
+
+      //used to change the document title
+      // document.title = "Learning New Things In Javascript";
+      // variable
+      /* best pratices don't use a or short
+               names for variable */
+      // let month = "March ";
+      // let dayOfmonth = "11, ";
+      // let todo3 = "2023";
+      // let result = 4 + 5 * 3;
+
+      // console.log(month + dayOfmonth + todo3);
+      // console.log(result);
+
+      // let age = 13;
+      // console.log("My Age is: " + )
+
+      // let todo1 = "Get groceries";
+      // let todo2 = "Do my homework";
+      // let todo3 = "Make dinner";
+
+      // creates a div in javascript
+      // create a html element with the type of div
+      // let element = document.createElement("div");
+      // changes the text inside of the element div to todo1 which is get groceries
+      // element.innerText = todo1;
+      // adds to the html page
+      // document.body deals with the body in the html file
+      // appendChild adds an element to the body after the other elements
+      // inside the brackets in the element you want to add
+      // document.body.appendChild(element);
+
+      // element = document.createElement("div");
+      // element.innerText = todo2;
+      // document.body.appendChild(element);
+
+      // element = document.createElement("div");
+      // element.innerText = todo3;
+      // document.body.appendChild(element);
+
+      // fuctions clean up code reusable pieces of code it run the same code over and over again with less code
+      // Exersise
+      // haw can people add todos with going in the code array
+
+      // let button = document.createElement("button");
+      // button.innerText = "Click Me";
+      // document.body.appendChild(button);
+
+      //remove var cause we are using the loop to render hour array
+
+      // let todo1 = "Get groceries";
+      // let todo2 = "Do my homework";
+      // let todo3 = "Make dinner";
+
+      // Array lists of valus you can add values with changing the code your selfs
+      // let todos = ["Get groceries", "Do my homework", "Make dinner"];
+      // push is a predefined function for javascript dot means attachment to todos
+      // push and pop are methods
+      // todos.push("another todo");
+
+      /*  LOOP
+              forEach goes through each array element and
+               put it inside the function as a parameter puts
+               the first one then run it then the other and other til it reachs the end. */
+
+      // todos.forEach(fuction (todoTitle) {
+      //   let element = document.createElement("div");
+      //   element.innerText = todoValue;
+      //   document.body.appendChild(element);
+      // });
+
+      // Strings have methods to
+
+      // console.log("hello".toUpperCase());
+
+      // pop is the oppsite of push pop removes the last element of an array
+      // todos.pop();
+
+      // function todolist(todoValue) {
+      //   let element = document.createElement("div");
+      //   element.innerText = todoValue;
+      //   document.body.appendChild(element);
+      // }
+      // to get the innertext to be all the todo not todo1 use a function and function parameter
+      // todolist(todo1);
+      // todolist(todo2);
+      // todolist(todo3);
+
+      // Exersise
+
+      // function greeting(firstName) {
+      //   console.log("Hello" + " " + firstName);
+      // }
+      // greeting("Matthew");
+
+      //Str uppcase
+      // function toUpper(str) {
+      //   console.log(str.toUpperCase());
+      // }
+      // toUpper("Matthew");
+
+      // Exersise
+      // function inchToCm(length) {
+      //   console.log(length * 2.54);
+      // }
+      // inchToCm(10);
+
+      //ARRAIES
+      function toUpper(stringArr) {
+        let result = [];
+
+        stringArr.forEach(function (str) {
+          result.push(str.toUpperCase());
+        });
+        console.log(result);
+      }
+      toUpper(['hello', 'bye']);
+
+      // Next
+
+      function arrayDouble(repeate) {
+        let arry = [];
+
+        repeate.forEach(function (double) {
+          arry.push('bark');
+          arry.push('mark');
+        });
+        console.log(arry);
+      }
+      arrayDouble(['bark', 'mark']);
+
+      function arraySum(sums) {
+        let total = 0;
+
+        sums.forEach(function (sum) {
+          total += sum;
+        });
+        console.log(total);
+      }
+      arraySum([1, 2, 3]);
+      arraySum([5, -2, 7, 0]);
+    </script>
   </body>
 </html>
