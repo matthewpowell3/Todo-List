@@ -8,26 +8,26 @@
   </head>
   <body>
     <input type="text" id="todoValue" placeholder="Add a todo" />
-    <input type="date" id="datepicker" />
+    <input type="date" id="datePicker" />
     <button onclick="addTodos()" id="addButton">Click me</button>
     <button onclick="clearTodos()" id="resetButton">Reset</button>
     <div id="todosContainer"></div>
     <script>
-      document.title = 'Learning New Things In Javascript';
+      document.title = "Learning New Things In Javascript";
 
       // let button = document.createElement("button");
       // button.innerText = "Click Me";
       // document.body.appendChild(button);
 
-      const todos = ['Get groceries', 'Do my homework', 'Make dinner'];
+      const todos = ["Get groceries", "Do my homework", "Make dinner"];
 
       renderer();
 
       // function are reusedable
 
       function addTodos() {
-        const todoid = document.getElementById('todoValue');
-        const datepicker = document.getElementById('datePicker');
+        const todoid = document.getElementById("todoValue");
+        const datepicker = document.getElementById("datePicker");
         const todolistValue = todoid.value;
         todos.push(todoid.value);
 
@@ -41,18 +41,18 @@
       }
 
       function clearTodos() {
-        const todoValue = document.getElementById('todoValue');
-        todoValue.value = '';
+        const todoValue = document.getElementById("todoValue");
+        todoValue.value = "";
       }
 
       function renderer() {
         // reset code
-        document.getElementById('todosContainer').innerText = '';
+        document.getElementById("todosContainer").innerText = "";
 
         todos.forEach(function (todoValue) {
-          let element = document.createElement('div');
+          let element = document.createElement("div");
           element.innerText = todoValue;
-          let todosContainer = document.getElementById('todosContainer');
+          let todosContainer = document.getElementById("todosContainer");
           todosContainer.appendChild(element);
           /* have to change it ferom body to
           the div container cause if you reset it will rest the button and everthing */
@@ -62,7 +62,7 @@
 
       // Strings have methods to
 
-      console.log('hello'.toUpperCase());
+      console.log("hello".toUpperCase());
 
       // todos.pop();
 
@@ -183,7 +183,7 @@
         });
         console.log(result);
       }
-      toUpper(['hello', 'bye']);
+      toUpper(["hello", "bye"]);
 
       // Next
 
@@ -191,12 +191,12 @@
         let arry = [];
 
         repeate.forEach(function (double) {
-          arry.push('bark');
-          arry.push('mark');
+          arry.push("bark");
+          arry.push("mark");
         });
         console.log(arry);
       }
-      arrayDouble(['bark', 'mark']);
+      arrayDouble(["bark", "mark"]);
 
       function arraySum(sums) {
         let total = 0;
