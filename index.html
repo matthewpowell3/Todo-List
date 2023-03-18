@@ -66,9 +66,10 @@
         // reset code
         document.getElementById('todosContainer').innerText = '';
 
-        todos.forEach(function (todoValue) {
+        todos.forEach(function (todos) {
           let element = document.createElement('div');
-          element.innerText = todoValue;
+          //getting the values inside the todo object
+          element.innerText = todos.title;
           let todosContainer = document.getElementById('todosContainer');
           todosContainer.appendChild(element);
           /* have to change it ferom body to
