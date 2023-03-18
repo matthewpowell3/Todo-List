@@ -42,7 +42,11 @@
         const todoid = document.getElementById('todoValue');
         const datepicker = document.getElementById('datePicker');
         const todolistValue = todoid.value;
-        todos.push(todoid.value);
+        // it know a object
+        todos.push({
+          title: todoid,
+          dueDate: datepicker,
+        });
 
         renderer();
 
