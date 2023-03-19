@@ -69,7 +69,7 @@
         todos.forEach(function (todo) {
           let element = document.createElement('div');
           //getting the values inside the todo object
-          element.innerText = todo.title;
+          element.innerText = todo.title + ' ' + "( " + todo.dueDate + " )";
           let todosContainer = document.getElementById('todosContainer');
           todosContainer.appendChild(element);
           /* have to change it ferom body to
